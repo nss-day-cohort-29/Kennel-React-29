@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import AnimalList from "./animal/AnimalList";
 import LocationList from "./location/LocationList";
 import EmployeeList from "./employee/EmployeeList";
+import AnimalManager from "../modules/AnimalManager";
 
 export default class ApplicationViews extends Component {
   state = {
@@ -25,14 +26,12 @@ export default class ApplicationViews extends Component {
   };
 
   componentDidMount() {
-    const newState = {};
-
-    fetch("http://localhost:5002/animals")
-      .then(r => r.json())
-      .then(animals => (newState.animals = animals))
-      .then(() => fetch("http://localhost:5002/employees").then(r => r.json()))
-      .then(employees => (newState.employees = employees))
-      .then(() => this.setState(newState));
+    // Example code. Make this fit into how you have written yours.
+    AnimalManager.getAll().then(allAnimals => {
+      this.setState({
+        animals: allAnimals
+      });
+    });
   }
 
   render() {
