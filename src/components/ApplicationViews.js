@@ -4,11 +4,15 @@ import AnimalList from "./animal/AnimalList";
 import LocationList from "./location/LocationList";
 import EmployeeList from "./employee/EmployeeList";
 import AnimalManager from "../modules/AnimalManager";
+import LocationManager from "../modules/LocationManager";
+import EmployeeManager from "../modules/EmployeeManager";
+import OwnerManager from "../modules/OwnerManager";
 
 export default class ApplicationViews extends Component {
   state = {
     animals: [],
-    employees: []
+    employees: [],
+    locations: []
   };
 
   deleteAnimal = id => {
@@ -30,6 +34,24 @@ export default class ApplicationViews extends Component {
     AnimalManager.getAll().then(allAnimals => {
       this.setState({
         animals: allAnimals
+      });
+    });
+
+    LocationManager.getAll().then(allLocations => {
+      this.setState({
+        locations: allLocations
+      });
+    });
+
+    EmployeeManager.getAll().then(allEmployees => {
+      this.setState({
+        employees: allEmployees
+      });
+    });
+
+    OwnerManager.getAll().then(allOwners => {
+      this.setState({
+        owners: allOwners
       });
     });
   }
