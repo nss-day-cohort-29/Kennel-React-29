@@ -20,36 +20,84 @@
   "animals": [
     {
       "id": 2,
-      "name": "Jack"
+      "name": "Jack",
+      "breed": "Golden Retriever",
+      "employeeId": 2
     },
     {
       "id": 3,
-      "name": "Angus"
+      "name": "Angus",
+      "breed": "Husky",
+      "employeeId": 4
     },
     {
       "id": 4,
-      "name": "Henley"
+      "name": "Henley",
+      "breed": "Lab",
+      "employeeId": 3
     },
     {
       "id": 5,
-      "name": "Derkins"
+      "name": "Derkins",
+      "breed": "Corgi",
+      "employeeId": 1
     },
     {
       "id": 6,
       "name": "Checkers",
       "breed": "Mutt"
+    },
+    {
+      "name": "Harper",
+      "breed": "German Shepherd",
+      "employeeId": 1,
+      "id": 7
+    },
+    {
+      "name": "Scout",
+      "breed": "Mutt",
+      "employeeId": 2,
+      "id": 8
+    },
+    {
+      "name": "Bob",
+      "breed": "Yorkie",
+      "employeeId": 4,
+      "id": 9
     }
   ],
-
   "locations": [
-    { "id": 1, "name": "Nashville North", "address": "500 Circle Way" },
-    { "id": 2, "name": "Nashville South", "address": "10101 Binary Court" }
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "500 Circle Way"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "10101 Binary Court"
+    }
   ],
-
   "owners": [
-    { "id": 1, "name": "Nick", "phoneNumber": "615-479-9666" },
-    { "id": 2, "name": "Bill", "phoneNumber": "123-433-9654" },
-    { "id": 3, "name": "Tim", "phoneNumber": "615-822-1166" },
-    { "id": 4, "name": "Ed", "phoneNumber": "615-433-1234" }
+    {
+      "id": 1,
+      "name": "Nick",
+      "phoneNumber": "615-479-9666"
+    },
+    {
+      "id": 2,
+      "name": "Bill",
+      "phoneNumber": "123-433-9654"
+    },
+    {
+      "id": 3,
+      "name": "Tim",
+      "phoneNumber": "615-822-1166"
+    },
+    {
+      "id": 4,
+      "name": "Ed",
+      "phoneNumber": "615-433-1234"
+    }
   ]
 }

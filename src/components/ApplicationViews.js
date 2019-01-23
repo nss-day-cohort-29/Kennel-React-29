@@ -8,6 +8,7 @@ import LocationManager from "../modules/LocationManager";
 import EmployeeManager from "../modules/EmployeeManager";
 import OwnerManager from "../modules/OwnerManager";
 import AnimalDetail from "./animal/AnimalDetail";
+import AnimalForm from "./animal/AnimalForm";
 
 export default class ApplicationViews extends Component {
   state = {
@@ -29,6 +30,15 @@ export default class ApplicationViews extends Component {
         })
       );
   };
+
+  addAnimal = animal =>
+    AnimalManager.post(animal)
+      .then(() => AnimalManager.getAll())
+      .then(animals =>
+        this.setState({
+          animals: animals
+        })
+      );
 
   componentDidMount() {
     // Example code. Make this fit into how you have written yours.
@@ -67,13 +77,21 @@ export default class ApplicationViews extends Component {
             return <LocationList locations={this.state.locations} />;
           }}
         />
+        {/* this is the list of animals */}
         <Route
           exact
           path="/animals"
           render={props => {
-            return <AnimalList animals={this.state.animals} />;
+            return (
+              <AnimalList
+                {...props}
+                deleteAnimal={this.deleteAnimal}
+                animals={this.state.animals}
+              />
+            );
           }}
         />
+        {/* this is the detail for individual animal */}
         <Route
           path="/animals/:animalId(\d+)"
           render={props => {
@@ -82,6 +100,19 @@ export default class ApplicationViews extends Component {
                 {...props}
                 deleteAnimal={this.deleteAnimal}
                 animals={this.state.animals}
+              />
+            );
+          }}
+        />
+        {/* this is the animal add form */}
+        <Route
+          path="/animals/new"
+          render={props => {
+            return (
+              <AnimalForm
+                {...props}
+                addAnimal={this.addAnimal}
+                employees={this.state.employees}
               />
             );
           }}
