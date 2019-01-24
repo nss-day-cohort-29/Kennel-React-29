@@ -10,6 +10,7 @@ import OwnerManager from "../modules/OwnerManager";
 import AnimalDetail from "./animal/AnimalDetail";
 import AnimalForm from "./animal/AnimalForm";
 import Login from "./authentication/Login";
+import SearchResults from "./search/SearchResults";
 
 export default class ApplicationViews extends Component {
   state = {
@@ -140,6 +141,15 @@ export default class ApplicationViews extends Component {
             } else {
               return <Redirect to="/login" />;
             }
+          }}
+        />
+        <Route
+          path="/search"
+          render={props => {
+            return (
+              <SearchResults {...this.props}
+              />
+            );
           }}
         />
       </React.Fragment>
