@@ -19,12 +19,6 @@
   ],
   "animals": [
     {
-      "id": 2,
-      "name": "Jack",
-      "breed": "Golden Retriever",
-      "employeeId": 2
-    },
-    {
       "id": 3,
       "name": "Angus",
       "breed": "Husky",
@@ -43,27 +37,10 @@
       "employeeId": 1
     },
     {
-      "id": 6,
-      "name": "Checkers",
-      "breed": "Mutt"
-    },
-    {
-      "name": "Harper",
-      "breed": "German Shepherd",
-      "employeeId": 1,
-      "id": 7
-    },
-    {
       "name": "Scout",
       "breed": "Mutt",
       "employeeId": 2,
       "id": 8
-    },
-    {
-      "name": "Bob",
-      "breed": "Yorkie",
-      "employeeId": 4,
-      "id": 9
     }
   ],
   "locations": [

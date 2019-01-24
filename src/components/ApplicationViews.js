@@ -15,7 +15,8 @@ export default class ApplicationViews extends Component {
   state = {
     animals: [],
     employees: [],
-    locations: []
+    locations: [],
+    owners: []
   };
 
   // Check if credentials are in local storage
@@ -131,7 +132,9 @@ export default class ApplicationViews extends Component {
               return (
                 <EmployeeList
                   deleteEmployee={this.deleteEmployee}
+                  animals={this.state.animals}
                   employees={this.state.employees}
+                  deleteAnimal={this.deleteAnimal}
                 />
               );
             } else {
