@@ -10,6 +10,8 @@ import OwnerManager from "../modules/OwnerManager";
 import AnimalDetail from "./animal/AnimalDetail";
 import AnimalForm from "./animal/AnimalForm";
 import Login from "./authentication/Login";
+import Callback from "../Callback";
+import auth0Client from "../Auth";
 
 export default class ApplicationViews extends Component {
   state = {
@@ -20,7 +22,7 @@ export default class ApplicationViews extends Component {
   };
 
   // Check if credentials are in local storage
-  isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+  // isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
   deleteAnimal = id => {
     return fetch(`http://localhost:5002/animals/${id}`, {
@@ -128,7 +130,7 @@ export default class ApplicationViews extends Component {
           exact
           path="/employees"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (auth0Client.isAuthenticated()) {
               return (
                 <EmployeeList
                   deleteEmployee={this.deleteEmployee}
@@ -138,10 +140,12 @@ export default class ApplicationViews extends Component {
                 />
               );
             } else {
-              return <Redirect to="/login" />;
+              auth0Client.signIn();
+              return <div></div>;
             }
           }}
         />
+        <Route exact path='/callback' component={Callback}/>
       </React.Fragment>
     );
   }
